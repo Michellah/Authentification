@@ -1,0 +1,122 @@
+.formStyle {
+    padding: 2em;
+}
+.formulaire {
+    background-color: white;
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.accueilStyle {
+	text-align: center;
+	margin: 2em;
+}
+.inputStyle {
+    border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+.buttonStyle {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+    margin: 25px;
+    padding-left: 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	color: #4C489D;
+	box-shadow: 0px 2px 2px #5C5696;
+	cursor: pointer;
+	width: 90vw;
+	height: 5vh;
+	transition: .2s;
+    text-align: center;
+}
+.buttonStyle:active,
+.buttonStyle:focus,
+.buttonStyle:hover {
+	border-color: #6A679E;
+	outline: none;
+}
+.login_submit {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+    margin: 25px;
+    padding-left: 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	color: #4C489D;
+	box-shadow: 0px 2px 2px #5C5696;
+	cursor: pointer;
+	transition: .2s;
+    text-align: center;
+}
+
+.login_submit:active,
+.login_submit:focus,
+.login_submit:hover {
+	border-color: #6A679E;
+	outline: none;
+}
+button {
+    border: 0;
+    background-color: #fff;
+}
+.fa-user {
+    color: #776BCC;
+}
+.fa-lock {
+    color: #776BCC;
+}
+.fa-chevron-right {
+    color: #776BCC;
+    padding-left: 20px;
+}
+.fa-facebook {
+    color: #4C489D;
+}
+.fa-github {
+    color: #4C489D;
+}
+.fa-google {
+    color: #4C489D;
+}
+.login__icon {
+	position: absolute;
+    top: 30px;
+	color: #7875B5;
+}
+
+.login__input {
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+
+@media screen and (max-width: 400vw) {
+    .inputStyle {
+        width: 25vw;
+    }
+}

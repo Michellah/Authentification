@@ -1,26 +1,61 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Login from './component/Login';
+import {
+  BrowserRouter,
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
+import Acceuil from './component/Acceuil';
+import { useState } from 'react';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
+import { authentication } from './Config';
 
-function App() {
+export default function App() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const handleAction = (id: any) => {
+    if (id === 2) {
+      createUserWithEmailAndPassword(authentication, email, password)
+        .then((response) => {
+          console.log(response)
+          navigate("/Accueil")
+        })
+        .catch((error) => {
+          console.error(error.code)
+        })
+    }
+    if(id === 1){
+      signInWithEmailAndPassword(authentication, email, password)
+        .then((response)=> {
+          navigate("/Accueil")
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Login
+          title="Login"
+          setEmail={setEmail}
+          setPassword={setPassword}
+          handleAction={() => handleAction(1)}
+        />} />
+        <Route path="/Register" element={<Login
+          title="Register"
+          setEmail={setEmail}
+          setPassword={setPassword}
+          handleAction={() => handleAction(2)}
+        />} />
+        <Route path="/Accueil" element={<Acceuil />} />
+      </Routes>
     </div>
   );
 }
 
-export default App;
